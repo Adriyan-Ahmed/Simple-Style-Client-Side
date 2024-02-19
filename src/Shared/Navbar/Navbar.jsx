@@ -15,9 +15,9 @@ const Navbar = () => {
 
 
     const Links = [
-        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] py-2.5 px-5 text-white font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/" >HOME</NavLink>,
-        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] py-2.5 px-5 text-white font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/all-jobs" >ALL JOBS</NavLink>,
-        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] py-2.5 px-5 text-white font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/blogs" >BLOGS</NavLink>,
+        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/" >HOME</NavLink>,
+        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/all-jobs" >ALL JOBS</NavLink>,
+        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/blogs" >BLOGS</NavLink>,
     ]
 
 
