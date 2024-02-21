@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import AddProduct from "../Pages/Add Product/AddProduct";
 import Protection from "../Provider/Protection/Protection";
 import Details from "../Pages/Details/Details";
+import MyCart from "../Pages/My Cart/MyCart";
 
 
 
@@ -42,8 +43,18 @@ const Router = createBrowserRouter([
       },
 
       {
+        path: "/my-cart",
+        element: <Protection><MyCart></MyCart></Protection>
+      },
+
+      {
         path: "/product-details/:id",
         element: <Protection><Details></Details></Protection>
+      },
+
+      {
+        path: "/update-product/:id",
+        element: <Protection></Protection>
       }
 
     ]
