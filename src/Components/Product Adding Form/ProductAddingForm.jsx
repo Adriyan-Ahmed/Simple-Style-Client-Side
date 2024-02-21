@@ -1,8 +1,68 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/Authentication/Authentication";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const ProductAddingForm = () => {
 
+
+    const { User } = useContext(AuthContext);
+
+
+    const handleAddProduct = (e) => {
+
+        e.preventDefault();
+
+        const form = e.target;
+
+        const name = form.name.value;
+
+        const image = form.image.value;
+
+        const type = form.type.value;
+
+        const price = form.price.value;
+
+        const rating = form.rating.value;
+
+        const brand = form.brand.value;
+
+        const details = form.details.value
+
+        const email = User.email
+
+        const product = { image, name, type, price, rating, brand, details, email }
+
+
+
+
+
+        axios.post(`http://localhost:5000/api/v1/products`, product)
+
+        .then(res => {
+
+            if(res.status == 'ok'){
+
+                toast.success('Congratulations ! Your Product Added successfully .')
+
+            }
+
+        })
+
+        
+
+
+        .catch(err => {
+            
+            if(err){
+
+                toast.error('There is a Trouble to Add Your Product');
+
+            }
+
+        })
+
+    }
 
 
     return (
@@ -10,7 +70,7 @@ const ProductAddingForm = () => {
             <div className="container mx-auto">
                 <div className="mx-4">
                     <div className="p-8 border-2 rounded-md">
-                        <form className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:items-center justify-between gap-6'>
+                        <form onSubmit={handleAddProduct} className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:items-center justify-between gap-6'>
                                 <div className='space-y-3 flex-1'>
                                     <h6 className='font-bold'>Product Name</h6>
                                     <div className="relative input-box">
@@ -58,7 +118,7 @@ const ProductAddingForm = () => {
                                 <label className="label">
                                     <h6 className='font-bold'>Product Details</h6>
                                 </label>
-                                <textarea name="Description" className=" text-[10px] md:text-base lg:text-lg py-2 md:py-4 rounded-lg px-6 border-2 outline-none " rows="5" placeholder="PRODUCT DETAILS"></textarea>
+                                <textarea name="details" className=" text-[10px] md:text-base lg:text-lg py-2 md:py-4 rounded-lg px-6 border-2 outline-none " rows="5" placeholder="PRODUCT DETAILS"></textarea>
                             </div>
                             <button className=" md:col-span-2 lg:col-span-3 bg-[#0FCFEC] py-3 text-white font-bold text-sm md:text-base rounded">ADD PRODUCT</button>
                         </form>
