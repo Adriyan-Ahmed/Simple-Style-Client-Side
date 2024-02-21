@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import SectionHead from "../../Shared/Section Head/SectionHead";
-import ProductCard from "../Review Card/ProductCard";
+import ProductCard from "../Prouduct Card/ProductCard";
 
 const Products = () => {
 

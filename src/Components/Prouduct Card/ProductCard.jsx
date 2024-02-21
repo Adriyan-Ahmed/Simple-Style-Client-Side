@@ -1,6 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import { TbBrandKbin } from "react-icons/tb";
 import { MdOutlineBloodtype } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 
 
@@ -9,13 +10,13 @@ const ProductCard = ({product}) => {
 
 
 
-    const {image, name, price, brand, rating, type } = product;
+    const {_id, image, name, price, brand, rating, type } = product;
 
 
 
     return (
         <>
-            <div className="bg-white rounded-lg ">
+            <div className="bg-white rounded-lg shadow-lg">
                 <div className="bg-base-200 rounded-tl-lg rounded-tr-lg">
                     <img className="h-72 py-4 mx-auto" src={image} alt="" />
                 </div>
@@ -30,7 +31,9 @@ const ProductCard = ({product}) => {
                         <p className="flex items-center gap-2 font-semibold"><MdOutlineBloodtype className="text-[#0FEC2D] text-2xl "></MdOutlineBloodtype><span className="text-[#0FEC2D]">Type :</span>{type}</p>
                     </div>
                     <div className="mt-6">
-                        <button className="w-full bg-[#0FCFEC] rounded-md text-white font-bold py-3 text-sm md:text-base hover:bg-transparent hover:py-2.5 hover:border-[#0FCFEC] hover:border-2 hover:text-[#0FCFEC] duration-500 ">DETAILS</button>
+                        <Link to={`/product-details/${_id}`}>
+                            <button className="w-full bg-[#0FCFEC] rounded-md text-white font-bold py-3 text-sm md:text-base hover:bg-transparent hover:py-2.5 hover:border-[#0FCFEC] hover:border-2 hover:text-[#0FCFEC] duration-500 ">DETAILS</button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AddProduct from "../Pages/Add Product/AddProduct";
 import Protection from "../Provider/Protection/Protection";
+import Details from "../Pages/Details/Details";
 
 
 
@@ -39,6 +40,11 @@ const Router = createBrowserRouter([
         path: "/add-product",
         element: <Protection><AddProduct></AddProduct></Protection>
       },
+
+      {
+        path: "/product-details/:id",
+        element: <Protection><Details></Details></Protection>
+      }
 
     ]
 
