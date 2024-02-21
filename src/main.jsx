@@ -10,6 +10,10 @@ import { RouterProvider, } from "react-router-dom";
 import Router from './Routes/Router.jsx';
 import Authentication from './Contexts/Authentication/Authentication.jsx';
 
+
+
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Authentication>

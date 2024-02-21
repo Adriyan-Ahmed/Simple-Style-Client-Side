@@ -4,11 +4,11 @@ import { FaGoogle } from "react-icons/fa6";
 import { AuthContext } from '../../Contexts/Authentication/Authentication';
 import { toast } from 'react-toastify';
 
-const LoginForm = () => {
+const RegisterForm = () => {
 
 
 
-    const { LoginAccount, GoogleLogin } = useContext(AuthContext);
+    const { CreateAccount, updatingProfile, GoogleLogin } = useContext(AuthContext);
 
 
 
@@ -34,64 +34,59 @@ const LoginForm = () => {
 
 
 
-    const handleLogin = e => {
+    const handleRegister = e => {
 
         e.preventDefault()
 
         const form = e.target;
-
+        
         const email = form.email.value;
-
+        
         const pass = form.pass.value;
+        
+        const photo = form.photo.value;
+        
+        const name = form.name.value;
+        
 
 
-
-
-        LoginAccount(email, pass)
+        CreateAccount(email, pass)
 
             .then(res => {
 
-                if (res) {
-
-                    toast.success('Login successful! You now have access. 🎉😊', {
-
-                        position: "top-center"
-
-                    })
-
+                if (res.user.email) {
+                
+                    updatingProfile(res, name, photo)
+                
+                    toast.success('Congratulations ! Registration completed Successfully ! 🤩💕')
+                
                     form.reset();
-
-                    navigate();
-
+                
                 }
-
+            
             })
-
-
-
-
+            
+            
             .catch(err => {
-
-                if (err.message == 'Firebase: Error (auth/network-request-failed).') {
-
-                    toast.error('Your Network Connection is Too Slow!')
-
+            
+                if (err.message == "Firebase: Error (auth/email-already-in-use).") {
+            
+                    toast.error("The Email already in use")
+            
                 }
-
+            
                 else {
-
-                    toast.error(err.message, {
-
-                        position: "top-center"
-
-                    })
-
+            
+                    toast.error(err.message);
+            
                 }
-
+            
             })
+
     }
 
 
+    
 
 
     const handleGGLLogin = () => {
@@ -132,11 +127,25 @@ const LoginForm = () => {
                     <div className='lg:flex-1'>
                         <div className='py-8 px-6 shadow-xl w-full md:w-8/12 mx-auto bg-base-100 rounded-md space-y-8 '>
                             <div className='space-y-2'>
-                                <h1 className='text-2xl font-bold'>LOGIN</h1>
-                                <p className='font-medium text-gray-400'>Doesn't have an account yet? <Link className='text-[#A60FEC] font-semibold underline' to="/register" >Sign Up</Link> </p>
+                                <h1 className='text-2xl font-bold'>REGISTER</h1>
+                                <p className='font-medium text-gray-400'>Have an account yet? <Link className='text-[#0FCFEC] font-semibold underline'  to="/login">Sign iN</Link> </p>
                             </div>
                             <div>
-                                <form onSubmit={handleLogin} className='space-y-5'>
+                                <form onSubmit={handleRegister} className='space-y-5'>
+                                    <div className='space-y-3'>
+                                        <h6 className='font-bold'>Name</h6>
+                                        <div className="relative input-box">
+                                            <input className="border-2 w-full py-2.5 rounded-md px-5 outline-none" type="text" name="name" required />
+                                            <span className="absolute left-3 text-gray-400 duration-300 ">YOUR NAME</span>
+                                        </div>
+                                    </div>
+                                    <div className='space-y-3'>
+                                        <h6 className='font-bold'>Photo URL</h6>
+                                        <div className="relative input-box">
+                                            <input className="border-2 w-full py-2.5 rounded-md px-5 outline-none" type="text" name="pic" required />
+                                            <span className="absolute left-3 text-gray-400 duration-300 ">YOUR PHOTO URL</span>
+                                        </div>
+                                    </div>
                                     <div className='space-y-3'>
                                         <h6 className='font-bold'>E-mail Address</h6>
                                         <div className="relative input-box">
@@ -152,13 +161,13 @@ const LoginForm = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <button className="bg-[#0FCFEC] py-2 md:py-3 w-full text-white font-bold  rounded">LOGIN</button>
+                                        <button className="bg-[#0FCFEC] py-2 md:py-3 w-full text-white font-bold  rounded">REGISTER</button>
                                     </div>
                                 </form>
                             </div>
                             <div className='flex items-center'>
                                 <div className='border-2 w-full'></div>
-                                <span className='font-medium text-gray-400 w-full text-center'>or login with</span>
+                                <span className='font-medium text-gray-400 w-full text-center'>or Register with</span>
                                 <div className='border-2 w-full'></div>
                             </div>
                             <div>
@@ -170,7 +179,7 @@ const LoginForm = () => {
                         </div>
                     </div>
                     <div className='lg:flex-1'>
-                        <img className='w-full md:w-10/12 mx-auto' src="https://i.ibb.co/rfSHjph/ezgif-5-125125aa26.gif" alt="" />
+                        <img className='w-full md:w-10/12 mx-auto' src="https://i.ibb.co/qx0x0gd/ezgif-2-c138207f2b.gif" alt="" />
                     </div>
                 </div>
             </div>
@@ -178,4 +187,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default RegisterForm;
