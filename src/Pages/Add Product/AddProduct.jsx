@@ -1,7 +1,11 @@
+import ProductAddingForm from "../../Components/Product Adding Form/ProductAddingForm";
+
 const AddProduct = () => {
     return (
         <>
-            <section></section>
+            <section className="pt-20">
+                <ProductAddingForm></ProductAddingForm>
+            </section>
         </>
     );
 };

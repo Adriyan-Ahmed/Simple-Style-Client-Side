@@ -20,7 +20,7 @@ const Navbar = () => {
 
     const Links = [
         <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/" >HOME</NavLink>,
-        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/add-products" >ADD PRODUCT</NavLink>,
+        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/add-product" >ADD PRODUCT</NavLink>,
         <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/my-cart" >MY CART</NavLink>,
     ]
 

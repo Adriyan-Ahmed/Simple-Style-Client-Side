@@ -30,7 +30,7 @@ const ProductCard = ({product}) => {
                         <p className="flex items-center gap-2 font-semibold"><MdOutlineBloodtype className="text-[#0FEC2D] text-2xl "></MdOutlineBloodtype><span className="text-[#0FEC2D]">Type :</span>{type}</p>
                     </div>
                     <div className="mt-6">
-                        <button className="product-btn">Details</button>
+                        <button className="w-full bg-[#0FCFEC] rounded-md text-white font-bold py-3 text-sm md:text-base hover:bg-transparent hover:py-2.5 hover:border-[#0FCFEC] hover:border-2 hover:text-[#0FCFEC] duration-500 ">DETAILS</button>
                     </div>
                 </div>
             </div>
