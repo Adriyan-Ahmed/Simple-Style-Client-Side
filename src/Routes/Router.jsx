@@ -3,6 +3,7 @@ import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import AddProduct from "../Pages/Add Product/AddProduct";
 
 
 
@@ -31,6 +32,11 @@ const Router = createBrowserRouter([
         {
             path: "/register",
             element: <Register></Register>
+        },
+
+        {
+            path: "/add-product",
+            element: <AddProduct></AddProduct>
         },
 
     ]

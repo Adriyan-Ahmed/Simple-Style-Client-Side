@@ -42,7 +42,7 @@ const LoginForm = () => {
 
         const email = form.email.value;
 
-        const pass = form.pass.value;
+        const pass = form.password.value;
 
 
 
@@ -147,7 +147,7 @@ const LoginForm = () => {
                                     <div className='space-y-3'>
                                         <h6 className='font-bold'>Password</h6>
                                         <div className="relative input-box">
-                                            <input className="border-2 w-full py-2.5 rounded-md px-5 outline-none" type="text" name="password" required />
+                                            <input className="border-2 w-full py-2.5 rounded-md px-5 outline-none" type="password" name="password" required />
                                             <span className="absolute left-3 text-gray-400 duration-300 ">YOUR PASSWORD</span>
                                         </div>
                                     </div>
@@ -158,7 +158,7 @@ const LoginForm = () => {
                             </div>
                             <div className='flex items-center'>
                                 <div className='border-2 w-full'></div>
-                                <span className='font-medium text-gray-400 w-full text-center'>or login with</span>
+                                <span className='font-medium text-gray-400 w-full text-center'>or Login with</span>
                                 <div className='border-2 w-full'></div>
                             </div>
                             <div>

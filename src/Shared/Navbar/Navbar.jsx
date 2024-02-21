@@ -2,10 +2,10 @@
 // -------- Imported Items -------- //
 // -------------------------------- //
 
-
-
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../Contexts/Authentication/Authentication";
 
 
 
@@ -14,10 +14,14 @@ const Navbar = () => {
 
 
 
+    const { User, LogOutAccount } = useContext(AuthContext);
+
+
+
     const Links = [
         <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/" >HOME</NavLink>,
-        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/all-jobs" >ALL JOBS</NavLink>,
-        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/blogs" >BLOGS</NavLink>,
+        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/add-products" >ADD PRODUCT</NavLink>,
+        <NavLink className={({ isActive }) => isActive ? `bg-[#0FCFEC] bg-opacity-10 py-2.5 px-5 text-[#0FCFEC] font-bold text-sm md:text-base rounded` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/my-cart" >MY CART</NavLink>,
     ]
 
 
@@ -55,26 +59,33 @@ const Navbar = () => {
                             </Link>
                         </div>
                         <div className="navbar-end">
-                            <div className="dropdown dropdown-end">
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
-                                        <img src="https://file.xunruicms.com/admin_html/assets/pages/media/profile/profile_user.jpg" />
+                            {
+                                User ? <>
+                                    <div className="dropdown dropdown-end">
+                                        <abbr title={User.displayName}>
+                                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                                <div className="w-10 rounded-full">
+                                                    <img src={User?.photoURL} />
+                                                </div>
+                                            </label>
+                                        </abbr>
+                                        <ul tabIndex={0} className=" dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded w-52">
+                                            <li className="bg-transparent py-2 md:py-2 md:px-2 font-bold text-xs md:text-sm  rounded">{User.displayName}</li>
+                                            <li className="bg-transparent py-2 md:py-2 md:px-2 font-bold text-xs md:text-sm  rounded">
+                                                <Link className="justify-between">
+                                                    Profile
+                                                    <span className="badge">New</span>
+                                                </Link>
+                                            </li>
+                                            <li onClick={() => LogOutAccount().then(res => toast.success('Log Out Successful !! 👌'))} className="bg-transparent py-2 md:py-2 md:px-2 font-bold text-xs md:text-sm btn-ghost rounded"><Link>Logout</Link></li>
+                                        </ul>
                                     </div>
-                                </label>
-                                <ul tabIndex={0} className=" dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded w-52">
-                                    <li className="bg-transparent py-2 md:py-2 md:px-2 font-bold text-xs md:text-sm  rounded">User Name</li>
-                                    <li className="bg-transparent py-2 md:py-2 md:px-2 font-bold text-xs md:text-sm  rounded">
-                                        <Link className="justify-between">
-                                            Profile
-                                            <span className="badge">New</span>
-                                        </Link>
-                                    </li>
-                                    <li className="bg-transparent py-2 md:py-2 md:px-2 font-bold text-xs md:text-sm btn-ghost rounded"><Link>Logout</Link></li>
-                                </ul>
-                            </div>
-                            <Link to='/login'>
-                                <button className="bg-[#0FCFEC] py-2 md:py-3 px-3 md:px-6 lg:px-9 text-white font-bold text-xs md:text-sm  rounded">LOGIN</button>
-                            </Link>
+                                    <button onClick={() => LogOutAccount().then(res => toast.success('Log Out Successful !! 👌'))} className="bg-[#0FCFEC]  py-2 md:py-3 px-3 md:px-6 lg:px-9 text-white font-bold text-xs md:text-sm  rounded">LOGOUT</button>
+                                </>
+                                    : <Link to='/login'>
+                                        <button className="bg-[#0FCFEC]  py-2 md:py-3 px-3 md:px-6 lg:px-9 text-white font-bold text-xs md:text-sm  rounded">LOGIN</button>
+                                    </Link>
+                            }
                         </div>
                     </div >
                 </div>

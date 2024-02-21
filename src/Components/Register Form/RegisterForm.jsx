@@ -42,7 +42,7 @@ const RegisterForm = () => {
         
         const email = form.email.value;
         
-        const pass = form.pass.value;
+        const pass = form.password.value;
         
         const photo = form.photo.value;
         
@@ -61,6 +61,8 @@ const RegisterForm = () => {
                     toast.success('Congratulations ! Registration completed Successfully ! 🤩💕')
                 
                     form.reset();
+
+                    navigate();
                 
                 }
             
@@ -122,13 +124,13 @@ const RegisterForm = () => {
 
     return (
         <>
-            <div className='mx-4'>
+            <div className='mx-4 pt-10'>
                 <div className='flex flex-col-reverse lg:flex-row lg:items-center gap-7 lg:gap-0 w-full'>
                     <div className='lg:flex-1'>
                         <div className='py-8 px-6 shadow-xl w-full md:w-8/12 mx-auto bg-base-100 rounded-md space-y-8 '>
                             <div className='space-y-2'>
                                 <h1 className='text-2xl font-bold'>REGISTER</h1>
-                                <p className='font-medium text-gray-400'>Have an account yet? <Link className='text-[#0FCFEC] font-semibold underline'  to="/login">Sign iN</Link> </p>
+                                <p className='font-medium text-gray-400'>Have an account in the website ? <Link className='text-[#0FCFEC] font-semibold underline'  to="/login">Sign in</Link> </p>
                             </div>
                             <div>
                                 <form onSubmit={handleRegister} className='space-y-5'>
@@ -142,7 +144,7 @@ const RegisterForm = () => {
                                     <div className='space-y-3'>
                                         <h6 className='font-bold'>Photo URL</h6>
                                         <div className="relative input-box">
-                                            <input className="border-2 w-full py-2.5 rounded-md px-5 outline-none" type="text" name="pic" required />
+                                            <input className="border-2 w-full py-2.5 rounded-md px-5 outline-none" type="text" name="photo" required />
                                             <span className="absolute left-3 text-gray-400 duration-300 ">YOUR PHOTO URL</span>
                                         </div>
                                     </div>
@@ -156,7 +158,7 @@ const RegisterForm = () => {
                                     <div className='space-y-3'>
                                         <h6 className='font-bold'>Password</h6>
                                         <div className="relative input-box">
-                                            <input className="border-2 w-full py-2.5 rounded-md px-5 outline-none" type="text" name="password" required />
+                                            <input className="border-2 w-full py-2.5 rounded-md px-5 outline-none" type="password" name="password" required />
                                             <span className="absolute left-3 text-gray-400 duration-300 ">YOUR PASSWORD</span>
                                         </div>
                                     </div>
