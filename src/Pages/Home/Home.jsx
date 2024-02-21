@@ -1,4 +1,5 @@
 import Banner from "../../Components/Banner/Banner";
+import Products from "../../Components/Products/Products";
 import Testimonial from "../../Components/Testimonial/Testimonial";
 import WhyUs from "../../Components/Why Us/WhyUs";
 import SectionHead from "../../Shared/Section Head/SectionHead";
@@ -14,6 +15,9 @@ const Home = () => {
             </section>
             <section>
                 <Testimonial></Testimonial>
+            </section>
+            <section>
+                <Products></Products>
             </section>
         </>
     );

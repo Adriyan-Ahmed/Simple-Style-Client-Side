@@ -1,0 +1,56 @@
+[
+    {
+        "image": "https://i.ibb.co/rHn7jkK/elegance-color-apparel-clothes-clothing-1203-6544-removebg-preview.png",
+        "name": "Classic Denim Jacket",
+        "type": "Outerwear",
+        "price": 59.99,
+        "rating": 4.5,
+        "brand": "Fashionista",
+        "details": "Timeless denim jacket. Classic design, durable denim. Versatile and stylish for any occasion."
+    },
+    {
+        "image": "https://i.ibb.co/kgrf6HP/17e19c54-3b50-4a23-b4b3-ccc54f994fe6-removebg-preview.png",
+        "name": "Casual Striped T-Shirt",
+        "type": "T-Shirt",
+        "price": 24.99,
+        "rating": 4.2,
+        "brand": "UrbanWear",
+        "details": "Comfortable striped tee. Soft fabric, trendy design. Perfect for casual, everyday wear."
+    },
+    {
+        "image": "https://i.ibb.co/bJvjB6h/png-transparent-dress-skirt-clothing-floral-dress-floral-cabbage-nightwear-removebg-preview.png",
+        "name": "Elegant Floral Dress",
+        "type": "Dress",
+        "price": 79.99,
+        "rating": 4.8,
+        "brand": "ChicCouture",
+        "details": "Floral patterned dress. Elegance for special occasions. Flattering fit, stylish charm."
+    },
+    {
+        "image": "https://i.ibb.co/VBT4r8T/warm-sweater-white-background-392895-200870-removebg-preview.png",
+        "name": "Cable-Knit Wool Sweate",
+        "type": "Sweater",
+        "price": 49.99,
+        "rating": 4.4,
+        "brand": "CozyKnits",
+        "details": "Classic cable-knit wool sweater. Soft and warm, perfect for chilly winter days and evenings."
+    },
+    {
+        "image": "https://i.ibb.co/r40tcf9/sweater-dress-white-background-1059430-52063-removebg-preview.png",
+        "name": "Cozy Knit Sweater",
+        "type": "Sweater",
+        "price": 39.99,
+        "rating": 4.6,
+        "brand": "WarmWardrobe",
+        "details": "Warm and cozy knit sweater. Versatile style, soft fabric. Perfect for chilly days."
+    },
+    {
+        "image": "https://i.ibb.co/JkHcK4Z/winter-clothes-essential-watercolor-vector-illustration-75071-3904-removebg-preview.png",
+        "name": "Cozy Plaid Blanket Scarf",
+        "type": "Accessories",
+        "price": 129.99,
+        "rating": 4.9,
+        "brand": "WinterChic",
+        "details": "Wrap up in our cozy plaid blanket scarf. Stylish and warm, the perfect winter fashion accessory."
+    }
+]

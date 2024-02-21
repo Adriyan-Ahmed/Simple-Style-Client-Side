@@ -24,7 +24,7 @@ const Navbar = () => {
 
     return (
         <>
-            <section className="bg-base-200 fixed top-0 w-full">
+            <section className="bg-base-200 fixed top-0 w-full z-10">
                 <div className="container mx-auto">
                     <div className="navbar py-3 md:py-4 lg:py-6">
                         <div className="navbar-start">

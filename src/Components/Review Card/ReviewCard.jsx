@@ -2,7 +2,7 @@ const ReviewCard = ({cardinfo}) => {
     console.log(cardinfo);
     return (
         <>
-            <div className="font-primary">
+            <div className="">
                 <h1 className="text-lg md:text-xl">{cardinfo.Title}</h1>
                 <div className="">
                     <div className="rating">
