@@ -8,9 +8,12 @@ const Products = () => {
 
 
 
+    const [block, setBlock] = useState(6)
+
+
+
 
     const [products, setProducts] = useState([]);
-
 
 
 
@@ -35,8 +38,16 @@ console.log(products);
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {
-                            products.map(product => <ProductCard key={product._id} product={product} ></ProductCard>)
+                            products.slice(0, block).map(product => <ProductCard key={product._id} product={product} ></ProductCard>)
                         }
+                    </div>
+                    <div className="text-center">
+                        <button onClick={() => setBlock(products.length)} className={`${block == products.length || !products.length ? 'hidden' : 'visible'}  bg-[#A60FEC] rounded-md text-white font-bold py-3 px-12 text-sm md:text-base hover:bg-transparent hover:py-2.5 hover:border-[#A60FEC] hover:border-2 hover:text-[#A60FEC] duration-500 bg-opacity-90`}>
+                            Show More
+                        </button>
+                        <button onClick={() => setBlock(6)} className={`${block == products.length ? ' bg-[#A60FEC] rounded-md text-white font-bold py-3 px-12 text-sm md:text-base hover:bg-transparent hover:py-2.5 hover:border-[#A60FEC] hover:border-2 hover:text-[#A60FEC] duration-500 bg-opacity-90' : 'hidden'} `}>
+                            Show Less
+                        </button>
                     </div>
                 </div>
             </div>

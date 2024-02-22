@@ -7,6 +7,8 @@ import AddProduct from "../Pages/Add Product/AddProduct";
 import Protection from "../Provider/Protection/Protection";
 import Details from "../Pages/Details/Details";
 import MyCart from "../Pages/My Cart/MyCart";
+import Update from "../Pages/Update/Update";
+import Error from "../Pages/Error/Error";
 
 
 
@@ -19,6 +21,8 @@ const Router = createBrowserRouter([
     path: "/",
 
     element: <MainLayout></MainLayout>,
+
+    errorElement: <Error></Error>,
 
     children: [
 
@@ -54,7 +58,7 @@ const Router = createBrowserRouter([
 
       {
         path: "/update-product/:id",
-        element: <Protection></Protection>
+        element: <Protection><Update></Update></Protection>
       }
 
     ]

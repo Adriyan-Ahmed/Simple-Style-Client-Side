@@ -1,3 +1,4 @@
+import AboutUs from "../../Components/About Us/AboutUs";
 import Banner from "../../Components/Banner/Banner";
 import Products from "../../Components/Products/Products";
 import Testimonial from "../../Components/Testimonial/Testimonial";
@@ -11,13 +12,16 @@ const Home = () => {
                 <Banner></Banner>
             </section>
             <section>
+                <Products></Products>
+            </section>
+            <section>
                 <WhyUs></WhyUs>
             </section>
             <section>
                 <Testimonial></Testimonial>
             </section>
             <section>
-                <Products></Products>
+                <AboutUs></AboutUs>
             </section>
         </>
     );

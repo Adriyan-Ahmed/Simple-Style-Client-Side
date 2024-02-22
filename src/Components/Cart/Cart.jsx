@@ -60,7 +60,7 @@ const Cart = () => {
                                 </th>
                                 <th className='text-base font-bold '>Product</th>
                                 <th className='text-base font-bold '>Price</th>
-                                <th className='text-base font-bold '>quantity</th>
+                                <th className='text-base font-bold '>Type</th>
                                 <th className='text-base font-bold '>Actions</th>
 
                             </tr>
@@ -77,22 +77,22 @@ const Cart = () => {
                                         <div className="flex items-center gap-3">
                                             <div className="">
                                                 <div className="w-40 h-28 bg-[#F5F6F6] rounded-md">
-                                                    <img className='h-full py-2 mx-auto' src={product.image} alt="Product's Image" />
+                                                    <img className='h-full py-2 mx-auto' src={product.product.image} alt="Product's Image" />
                                                 </div>
                                             </div>
                                             <div className='space-y-4'>
-                                                <div className="font-bold">{product.type}</div>
-                                                <div className="font bold text-gray-400">{product.brand}</div>
+                                                <div className="font-bold">{product.product.type}</div>
+                                                <div className="font bold text-gray-400">{product.product.brand}</div>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <span className='font-bold'>{product.price} $</span>
+                                        <span className='font-bold'>{product.product.price}</span>
                                     </td>
-                                    <td className='text-center'>1</td>
+                                    <td className=''>{product.product.type}</td>
                                     <th>
                                         <Link to={`/update-product/${product._id}`} >
-                                            <button className=" text-white p-5 text-xl rounded-md bg-[#0FEC2D] "><MdTipsAndUpdates></MdTipsAndUpdates></button>
+                                            <button className=" text-white py-3 px-7 text-xl rounded-md bg-[#0FEC2D] flex items-center gap-2 "><MdTipsAndUpdates></MdTipsAndUpdates> <span className='text-base'>Update</span></button>
                                         </Link>
                                     </th>
                                 </tr>)
