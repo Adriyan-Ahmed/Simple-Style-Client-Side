@@ -1,5 +1,6 @@
 import AboutUs from "../../Components/About Us/AboutUs";
 import Banner from "../../Components/Banner/Banner";
+import ContactUs from "../../Components/Contact Us/ContactUs";
 import Products from "../../Components/Products/Products";
 import Testimonial from "../../Components/Testimonial/Testimonial";
 import WhyUs from "../../Components/Why Us/WhyUs";
@@ -22,6 +23,9 @@ const Home = () => {
             </section>
             <section>
                 <AboutUs></AboutUs>
+            </section>
+            <section>
+                <ContactUs></ContactUs>
             </section>
         </>
     );

@@ -3,7 +3,7 @@ const AboutUs = () => {
         <>
             <div className="container mx-auto">
                 <div className="mx-4">
-                    <div className="flex flex-col lg:flex-row lg:items-center gap-6s">
+                    <div className="flex flex-col-reverse lg:flex-row lg:items-center gap-6s">
                         <div className="flex-1 space-y-8">
                             <div className="pl-6 border-[#0FCFEC] border-l-4 ">
                                 <h5 className="text-base md:text-lg xl:text-xl font-semibold text-[#0FCFEC] ">WHO WE ARE ?</h5>

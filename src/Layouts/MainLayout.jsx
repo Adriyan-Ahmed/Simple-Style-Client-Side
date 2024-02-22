@@ -17,7 +17,7 @@ const MainLayout = () => {
             <header>
                 <Navbar></Navbar>
             </header>
-            <main className="min-h-screen mt-[75px] md:mt-[83px] lg:mt-[99px] space-y-10 md:space-y-16 lg:space-y-20 bg-[#f6ffff] ">
+            <main className="min-h-screen mt-[75px] md:mt-[83px] lg:mt-[99px] space-y-14 md:space-y-20 lg:space-y-28 bg-[#f6ffff] ">
                 <Outlet />
             </main>
             <ToastContainer></ToastContainer>

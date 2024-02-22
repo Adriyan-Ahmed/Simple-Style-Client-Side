@@ -42,10 +42,10 @@ console.log(products);
                         }
                     </div>
                     <div className="text-center">
-                        <button onClick={() => setBlock(products.length)} className={`${block == products.length || !products.length ? 'hidden' : 'visible'}  bg-[#A60FEC] rounded-md text-white font-bold py-3 px-12 text-sm md:text-base hover:bg-transparent hover:py-2.5 hover:border-[#A60FEC] hover:border-2 hover:text-[#A60FEC] duration-500 bg-opacity-90`}>
+                        <button onClick={() => setBlock(products.length)} className={`${block == products.length || !products.length ? 'hidden' : 'visible'}  bg-[#0FCFEC] rounded-md text-white font-bold py-3 px-12 text-sm md:text-base hover:bg-transparent hover:py-2.5 hover:border-[#0FCFEC] hover:border-2 hover:text-[#0FCFEC] duration-500 bg-opacity-90`}>
                             Show More
                         </button>
-                        <button onClick={() => setBlock(6)} className={`${block == products.length ? ' bg-[#A60FEC] rounded-md text-white font-bold py-3 px-12 text-sm md:text-base hover:bg-transparent hover:py-2.5 hover:border-[#A60FEC] hover:border-2 hover:text-[#A60FEC] duration-500 bg-opacity-90' : 'hidden'} `}>
+                        <button onClick={() => setBlock(6)} className={`${block == products.length ? ' bg-[#0FCFEC] rounded-md text-white font-bold py-3 px-12 text-sm md:text-base hover:bg-transparent hover:py-2.5 hover:border-[#0FCFEC] hover:border-2 hover:text-[#0FCFEC] duration-500 bg-opacity-90' : 'hidden'} `}>
                             Show Less
                         </button>
                     </div>
